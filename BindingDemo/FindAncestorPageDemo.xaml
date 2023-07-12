@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BindingDemo.FindAncestorPageDemo"
+             Title="FindAncestorPageDemo">
+    <StackLayout Margin="5" 
+                 VerticalOptions="Center" 
+                 HorizontalOptions="Center">
+        <Border StrokeThickness="2"  
+                Stroke="Black" Background="Red" 
+                WidthRequest="400" HeightRequest="400">
+            <Border Margin="20" Background="Blue" 
+                    StrokeThickness="3" Stroke="Black">
+                <Border Margin="20" Background="Green" 
+                        StrokeThickness="3" Stroke="Black">
+                    <!--FindAncestor to bind current Backround proprerty to the
+                        first Border Background property -->
+                    <Border Margin="20" StrokeThickness="3" 
+                        Background="{Binding Background,
+                        Source={RelativeSource Mode=FindAncestor, 
+                        AncestorLevel=3
+			            ,AncestorType={x:Type Border}}}" 
+                        Stroke="Black">
+                    </Border>
+                </Border>
+            </Border>
+        </Border>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BindingDemo"
+             x:Class="BindingDemo.MarkupExtensionPageDemo"
+             Title="MarkupExtensionPageDemo">
+    <VerticalStackLayout Margin="20" Spacing="10">
+        <Label Text="Test extension de balisage:"/>
+        <Label Text="Choisir ta langue:"/>
+        <Picker>
+            <Picker.Items>
+                <x:String>French</x:String>
+                <x:String>English</x:String>
+                <x:String>German</x:String>
+            </Picker.Items>
+        </Picker>
+        <Label Text="{local:Translate test}"/>
+    </VerticalStackLayout>
+</ContentPage>

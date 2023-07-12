@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BindingDemo.RelativeSelfPageDemo"
+             Title="RelativeSelfPageDemo"
+            BindingContext="{Binding Path=Employees, Source={RelativeSource Self}}">
+    <ContentPage.Resources>
+        <DataTemplate x:Key="template">
+            <VerticalStackLayout>
+                <Grid Margin="20" RowDefinitions="*,*,*" ColumnDefinitions="*,*,*">
+                    <Label Text="Id:"/>
+                    <Label Text="Name:" Grid.Row="1"/>
+                    <Label Text="Salary:" Grid.Row="2"/>
+
+                    <Label Text="{Binding Id}" Grid.Column="1"/>
+                    <Label Text="{Binding Name}" Grid.Column="1" Grid.Row="1"/>
+                    <Label Text="{Binding Salary}" Grid.Column="1" Grid.Row="2"/>
+                </Grid>
+            </VerticalStackLayout>
+        </DataTemplate>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout 
+        BindableLayout.ItemTemplate="{StaticResource template}"
+        BindableLayout.ItemsSource="{Binding}">
+
+
+    </VerticalStackLayout>
+</ContentPage>
