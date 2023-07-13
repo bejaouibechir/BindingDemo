@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace BindingDemo;
 
 public partial class MarkupExtensionPageDemo : ContentPage
@@ -6,4 +8,17 @@ public partial class MarkupExtensionPageDemo : ContentPage
 	{
 		InitializeComponent();
 	}
+}
+
+public class ToStringConverter : IValueConverter
+{
+    object IValueConverter.Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        throw new NotImplementedException();
+    }
+
+    object IValueConverter.ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        throw new NotImplementedException();
+    }
 }

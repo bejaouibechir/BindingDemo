@@ -1,31 +1,25 @@
-﻿using System.Globalization;
-using Xamarin.Google.Crypto.Tink.Proto;
-
-namespace BindingDemo
+﻿namespace BindingDemo
 {
     public class TranslateExtension : IMarkupExtension
     {
-        private string key;
+        private string _key;
         private BindableObject targetObject;
         private BindableProperty targetProperty;
 
-        public TranslateExtension():this("French"){}
-
-        public TranslateExtension(string key)
-        {
-            this.key = key;
+        public TranslateExtension(){
+            Language = "Français";
+            Key = "File";
         }
 
-        public string Field { get; set; }
+        //public TranslateExtension(string key)
+        //{
+        //    _key = key;
+        //    Language = "Français";
+        //}
 
-        void Translator_CultureChanged(object sender, EventArgs e)
-        {
-            if (targetObject != null && targetProperty != null)
-            {
-                targetObject.SetValue(targetProperty,
-                      ResourceManager.GetObject(key,Field));
-            }
-        }
+        public string Language { get; set; }
+        public string Key { get; set; }
+
 
         public object ProvideValue(IServiceProvider serviceProvider)
         {
@@ -33,21 +27,78 @@ namespace BindingDemo
                    GetService(typeof(IProvideValueTarget));
             targetObject = targetHelper.TargetObject as BindableObject;
             targetProperty = targetHelper.TargetProperty as BindableProperty;
-            return ResourceManager.GetObject(key, Field);
+            ResourceManager manager = new ResourceManager();
+            
+            return manager.GetObject(Key, Language);
         }
     }
-
-    public class ResourceManager
+    public class ResourceManager : IResourceManager
     {
-        Dictionary<string, object> _frenchdictionary;
-        Dictionary<string, object> _englishdictionary;
-        Dictionary<string, object> _germandictionary;
-        public static object GetObject(string key,string field)
+        public object GetObject(string key, string language)
         {
-           //To do implement the data rerivement 
+            switch (language)
+            {
+                case "Français":
+                    {
+                        switch (key)
+                        {
+                            case "file":
+                                return "Fiche";
+                            case "identifier":
+                                return "Identifiant";
+                            case "name":
+                                return "Nom";
+                            case "salary":
+                                return "Salaire";
+                            case "flag":
+                                return "france.png";
+                            default:
+                                throw new ArgumentException("key must be defined");
+                        }
+                    }
+                case "English":
+                    {
+                        switch (key)
+                        {
+                            case "file":
+                                return "File";
+                            case "identifier":
+                                return "Identifier";
+                            case "name":
+                                return "Name";
+                            case "salary":
+                                return "Salary";
+                            case "flag":
+                                return "english.png";
+                            default:
+                                throw new ArgumentException("key must be defined");
+                        }
+                    }
+                case "Deutsch":
+                    {
+                        switch (key)
+                        {
+                            case "file":
+                                return "DatenBlatt";
+                            case "identifier":
+                                return "Kennung";
+                            case "name":
+                                return "Name";
+                            case "salary":
+                                return "Gehalt";
+                            case "flag":
+                                return "deutsch.png";
+                            default:
+                                throw new ArgumentException("key must be defined");
+                        }
+                    }
+            }
+
+
+            //To do implement the data rerivement 
             return "Not implemented";
         }
 
-        
+
     }
 }
