@@ -45,9 +45,6 @@ namespace BindingDemo
                 current.Background = _color;
                 current.TextColor = _textcolor;
             }
-
-
-
         }
     }
 }

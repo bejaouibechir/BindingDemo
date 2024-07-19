@@ -1,12 +1,14 @@
-﻿//#define simplebinding --
-//#define findancestor --
-//#define relativeself --
-//#define staticbinding --
+﻿//#define simplebinding 
+//#define findancestor 
+//#define findancestorbindingcontext
+//#define relativeself 
+//#define templatedparent 
+//#define staticbinding 
 //#define bindableproperty
 //#define attachedproperty
 //#define attachedproperty2
 //#define notifyprop
-#define markup
+//#define markup
 
 
 namespace BindingDemo;
@@ -21,6 +23,9 @@ public partial class App : Application
 #endif
 #if findancestor
       MainPage = new FindAncestorPageDemo();
+#endif
+#if findancestorbindingcontext
+      MainPage = new FindAncestorBindingContextPageDemo();
 #endif
 #if relativeself
         MainPage = new RelativeSelfPageDemo();

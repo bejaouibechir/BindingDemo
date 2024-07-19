@@ -5,8 +5,8 @@
              xmlns:local="clr-namespace:BindingDemo"
              Title="BindablePropertyPageDemo">
     <VerticalStackLayout Spacing="5" Margin="20">
-        <Label BackgroundColor="Red" HeightRequest="50" />
-        <local:SpecialLabel BackgroundColor="Green" HeightRequest="50" Visibility="Visible" />
+        <Label BackgroundColor="Red" HeightRequest="50"   />
+        <local:SpecialLabel BackgroundColor="Green" HeightRequest="50" Visibility="Hidden" />
         <Label BackgroundColor="Blue" HeightRequest="50" />
     </VerticalStackLayout>
 </ContentPage>

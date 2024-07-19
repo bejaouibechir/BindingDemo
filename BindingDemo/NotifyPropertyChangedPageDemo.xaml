@@ -16,6 +16,6 @@
             <Button Clicked="Button_Clicked" Margin="5"  FontSize="Large" Text="+" Grid.Column="1"/>
         </Grid>
                   
-                 
+                
     </VerticalStackLayout>
 </ContentPage>

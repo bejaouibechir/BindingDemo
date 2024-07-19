@@ -16,18 +16,22 @@
         <Label  
             Text="Welcome to .NET MAUI!"
             Background="Bisque"
+            local:ScaleAttachedProperty.Scale="3"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
         <Label  Margin="20"
             Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" 
+            local:ScaleAttachedProperty.Scale="3"
             HorizontalOptions="Center"
+            
             Background="AliceBlue"
             />
         <Label Margin="20"
             Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" 
+            local:ScaleAttachedProperty.Scale="4"
             HorizontalOptions="Center" 
             Background="LightGreen"
             />
