@@ -19,11 +19,12 @@
             <Label Text="Vérification de mail" Grid.ColumnSpan="2"  HorizontalOptions="Center" />
             <Label Text="Mail: "
                    Grid.Row="1"  VerticalOptions="Center" Margin="0,0,5,0"/>
-            <Entry Grid.Row="1" Grid.Column="1" 
-                     local:EmailVerify.Activation="True"
+            <Entry x:Name="entry1" Grid.Row="1" Grid.Column="1" 
+                     local:EmailVerify.Activation="True" Text="me780411@gmail.com"
                      WidthRequest="250"/>
-            <Entry Grid.Row="2" Grid.Column="1" 
-                      WidthRequest="250"/>
+            <Entry x:Name="entry2" Grid.Row="2" Grid.Column="1" 
+                   local:EmailVerify.Activation="True"   
+                   WidthRequest="250"  Text="me780411@"  />
         </Grid>
     </StackLayout>
 

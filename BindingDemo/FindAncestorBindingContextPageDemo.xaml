@@ -7,7 +7,7 @@
     <ContentPage.Resources>
         <Color x:Key="green">#00FF00</Color>
         <local:ViewModelBase x:Key="vmodelbase" ColorBase="{StaticResource Key=green}"/>
-        <local:ViewModel x:Key="vmodel" Color="{StaticResource Cyan100Accent}"/>
+        <local:ViewModel x:Key="vmodel" ColorBase="Red"/>
     </ContentPage.Resources>
 
     <VerticalStackLayout BindingContext="{StaticResource Key=vmodelbase}">
@@ -20,7 +20,7 @@
                 <Label Text="Label 1" />
                 <Label Text="Label 2" BackgroundColor="{Binding Path=ColorBase, 
                     Source={RelativeSource Mode=FindAncestorBindingContext, 
-                    AncestorLevel=2,AncestorType={x:Type local:ViewModelBase} }}"  />
+                    AncestorLevel=1,AncestorType={x:Type local:ViewModelBase} }}"  />
             </StackLayout>
 
         </VerticalStackLayout>

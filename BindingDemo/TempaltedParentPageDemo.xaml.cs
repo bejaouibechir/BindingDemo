@@ -13,11 +13,7 @@ public partial class TempaltedParentPageDemo : ContentPage
 
 public class NumericUpDown : ContentView
 {
-    public int Value
-    {
-        get { return (int)GetValue(ValueProperty); }
-        set { SetValue(ValueProperty, value); }
-    }
+    
 
     public IncreaseCommand IncreaseCommand { get; set; }
     public DecreaseCommand DecreaseCommand { get; set; }
@@ -26,6 +22,12 @@ public class NumericUpDown : ContentView
     {
         IncreaseCommand = new IncreaseCommand(this);
         DecreaseCommand = new DecreaseCommand(this);
+    }
+
+    public int Value
+    {
+        get { return (int)GetValue(ValueProperty); }
+        set { SetValue(ValueProperty, value); }
     }
 
     // Using a DependencyProperty as the backing store for Value.  This enables animation, styling, binding, etc...
@@ -37,7 +39,7 @@ public class NumericUpDown : ContentView
     {
         int input = (int)value;
         if (input < 0) input = 0;
-        if (input > 100) input = 0;
+        if (input > 5) input = 5;
         return input;
     }
 

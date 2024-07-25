@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BindingDemo"
+             x:Class="BindingDemo.HexToColorConverterPageDemo"
+             Title="HexToColorConverterPageDemo">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:HexToColorConverter x:Key="HexToColorConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Padding="20" Margin="0,250,0,0">
+        <Label Text="Hex to Color Example" 
+               FontSize="24" 
+               HorizontalOptions="Center" 
+               VerticalOptions="Start" />
+
+        <BoxView x:Name="colorBoxView" 
+                 WidthRequest="200" 
+                 HeightRequest="200" 
+                 HorizontalOptions="Center" 
+                 VerticalOptions="CenterAndExpand" />
+
+        <Entry x:Name="hexEntry" 
+               Placeholder="Enter Hex Color" 
+               HorizontalOptions="FillAndExpand" 
+               VerticalOptions="EndAndExpand" 
+               TextChanged="OnHexEntryChanged"
+               
+               />
+    </StackLayout>
+</ContentPage>

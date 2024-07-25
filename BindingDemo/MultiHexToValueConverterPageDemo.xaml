@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BindingDemo"
+             x:Class="BindingDemo.MultiHexToValueConverterPageDemo"
+             Title="MultiHexToValueConverterPageDemo">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:HexToGradientColorConverter x:Key="HexToGradientColorConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Padding="20">
+        <Label Text="Hex to Gradient Color Example" 
+               FontSize="24" 
+               HorizontalOptions="Center" 
+               VerticalOptions="Start" />
+
+        <BoxView x:Name="gradientBoxView" Margin="0,200,0,0"
+                 WidthRequest="200" 
+                 HeightRequest="200" 
+                 HorizontalOptions="Center" 
+                 VerticalOptions="CenterAndExpand">
+            <BoxView.Background>
+                <MultiBinding Converter="{StaticResource HexToGradientColorConverter}">
+                    <Binding Source="{x:Reference hexEntry1}" Path="Text"/>
+                    <Binding Source="{x:Reference hexEntry2}" Path="Text"/>
+                </MultiBinding>
+            </BoxView.Background>
+        </BoxView>
+
+        <VerticalStackLayout>
+            <Label Text="Couleur 1:"/>
+            <Entry x:Name="hexEntry1" Text="#00ff00"
+           Placeholder="Enter First Hex Color" 
+           HorizontalOptions="FillAndExpand" 
+           VerticalOptions="EndAndExpand"
+           TextChanged="OnHexEntryTextChanged"
+           />
+            <Label Text="Couleur 2:"/>
+            <Entry x:Name="hexEntry2" Text="#ff0000"
+           Placeholder="Enter Second Hex Color" 
+           HorizontalOptions="FillAndExpand" 
+           VerticalOptions="EndAndExpand"
+            TextChanged="OnHexEntryTextChanged"
+           />
+        </VerticalStackLayout>
+    </StackLayout>
+</ContentPage>

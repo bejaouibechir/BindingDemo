@@ -9,4 +9,29 @@
         <local:SpecialLabel BackgroundColor="Green" HeightRequest="50" Visibility="Hidden" />
         <Label BackgroundColor="Blue" HeightRequest="50" />
     </VerticalStackLayout>
+
+
+    <!--<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+         --><!--Add your controls here--><!-- 
+
+        <Label Text="Contenu" Grid.Column="1" Grid.Row="1" />
+
+    </Grid>-->
+
+
 </ContentPage>

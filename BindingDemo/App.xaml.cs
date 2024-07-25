@@ -1,14 +1,17 @@
 ﻿//#define simplebinding 
 //#define findancestor 
 //#define findancestorbindingcontext
-//#define relativeself 
+//#define relativeself1
+//#define relativeself2 
 //#define templatedparent 
 //#define staticbinding 
 //#define bindableproperty
 //#define attachedproperty
-//#define attachedproperty2
+#define attachedproperty2
 //#define notifyprop
 //#define markup
+//#define simpleconverter
+//#define multiconverter
 
 
 namespace BindingDemo;
@@ -27,7 +30,10 @@ public partial class App : Application
 #if findancestorbindingcontext
       MainPage = new FindAncestorBindingContextPageDemo();
 #endif
-#if relativeself
+#if relativeself1
+        MainPage = new RelativeSelfExemple1PageDemo();
+#endif
+#if relativeself2
         MainPage = new RelativeSelfPageDemo();
 #endif
 #if templatedparent
@@ -50,6 +56,12 @@ public partial class App : Application
 #endif
 #if markup
         MainPage = new MarkupExtensionPageDemo(); 
+#endif
+#if simpleconverter
+       MainPage = new HexToColorConverterPageDemo();
+#endif
+#if multiconverter
+        MainPage = new MultiHexToValueConverterPageDemo();
 #endif
 
     }
